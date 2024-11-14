@@ -3,7 +3,7 @@ VARIABLES
 ================================================ */
 /* variables:変数。色やフォントを一括で定義 */
 :root {
-    --primary-font: 'Nunito', sans-serif;
+    --primary-font: 'Kosugi', sans-serif;
     --background-color: #e0f7ff;
     --text-color: #333;
     /* --card-bg-color: #ffffff; */
