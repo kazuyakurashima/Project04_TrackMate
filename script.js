@@ -1,12 +1,17 @@
-const habitForm = document.querySelector("#habitForm")
-const addBtn = document.querySelector("#addBtn")
-
-addBtn.addEventListener("click",()=> {
-    const habitData = habitForm.value;
+$("#addBtn").on("click",function() {
+    const habitData = $("#habitForm").val();
 
     // ローカルストレージに保存
     localStorage.setItem("key",habitData);
     habitForm.value = "";
+    console.log(habitData);
+
+    if(habitData) {
+        const card = $()
+
+        const v = localStorage.getItem("key");
+        $("#cardContainer").val(v);
+    }
 
     // カードを作成
     const card = document.createElement("div");
@@ -15,10 +20,10 @@ addBtn.addEventListener("click",()=> {
     card.classList.add("card");
     // cardにクラスを付け加える。cardというクラスを
     // card → <div class="card"></div>
-    card.textContent = text;
+    card.textContent = "aaa";
     // cardにテキストを付け加える。textを
 
-    cardContainer.appendChild(card);
+    // cardContainer.appendChild(card);
 
 
 
