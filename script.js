@@ -1,16 +1,16 @@
 $("#addBtn").on("click", function() {
-    // 入力した習慣を取得
     const habitData = $("#habitForm").val();
     if (habitData) {
-        // ローカルストレージに保存 (カンマで区切った文字列として)
+        // 入力があれば、habitsというキーのデータをstoredHabitsに入れます
         let storedHabits = localStorage.getItem("habits");
         if (storedHabits) {
-            // すでにある習慣があれば追加
+            // すでに入力したhabitsに、文字列を追記します
             storedHabits += `,${habitData}`;
         } else {
-            // 初めての習慣
+            // 空白のままボタンを押した場合は、そのままにします
             storedHabits = habitData;
         }
+        // 追記した習慣を、habitsのキーに入れます
         localStorage.setItem("habits", storedHabits);
 
         // 入力をクリア
