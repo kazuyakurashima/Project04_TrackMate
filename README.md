@@ -34,3 +34,6 @@ Track Mate
 
 土曜日までにブラッシュアップ、、、したい
 →頑張ってブラッシュアップ完了！！！
+- [参考記事]
+  - 1. [URLをここに記入]https://www.freecodecamp.org/japanese/news/javascript-array-insert-how-to-add-to-an-array-with-the-push-unshift-and-concat-functions/
+  １１月９日（土）いっちーさん紹介の記事を見て、今回pushメソッド使ってみました。
