@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- タイトルをつけよ！！！！！！！！！！！！！ -->
+    <title>Track Mate</title>
     <link rel="stylesheet" href="stylesheet.css">
 
     <!-- Google Fontsの設定 -->
@@ -14,28 +13,22 @@
     
     <script src="script.js" defer></script>
     <!-- defer「必ずページの準備が終わってから動いてね！」 -->
-    <link rel="icon" href="">
-    <!-- ファビコンをつけよ！！！！！！！！！！！！ -->
+    <link rel="icon" href="/src/favicon.svg">
 
 </head>
 <body>
-    <h1>こんにちは、Kosugiフォントです！</h1>
-    <p>このテキストはKosugiフォントで表示されています。</p>
 
-    <section>
-        <div>今日の達成</div>
-        <div>連続達成</div>
-        <div>達成率</div>
-    </section>
-
-    <section>
-        <h2>新しい習慣を追加</h2>
+<!-- Track Mate Selection
+================================================ -->
+<section>
+    <h1>習慣トラッカー</h1>
+    <div id="inputContainer">
         <input type="text" id="habitForm" placeholder="新しい習慣を入力...">
-        <button id ="addBtn">追加</button>
-
-        <div id="cardContainer"></div>
-        
-    </section>
+        <button id="addBtn">新しい習慣を追加</button>
+    </div>
+    <div id="cardContainer"></div>
+    <button id="clearBtn">すべての習慣を消す</button> 
+</section>
 
     <!-- Loading jQuery
 ================================================ -->

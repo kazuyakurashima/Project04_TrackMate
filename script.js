@@ -1,30 +1,49 @@
-$("#addBtn").on("click",function() {
+$("#addBtn").on("click", function() {
+    // 入力した習慣を取得
     const habitData = $("#habitForm").val();
+    if (habitData) {
+        // ローカルストレージに保存 (カンマで区切った文字列として)
+        let storedHabits = localStorage.getItem("habits");
+        if (storedHabits) {
+            // すでにある習慣があれば追加
+            storedHabits += `,${habitData}`;
+        } else {
+            // 初めての習慣
+            storedHabits = habitData;
+        }
+        localStorage.setItem("habits", storedHabits);
 
-    // ローカルストレージに保存
-    localStorage.setItem("key",habitData);
-    habitForm.value = "";
-    console.log(habitData);
+        // 入力をクリア
+        $("#habitForm").val("");
 
-    if(habitData) {
-        const card = $()
-
-        const v = localStorage.getItem("key");
-        $("#cardContainer").val(v);
+        // 習慣を表示
+        displayHabits();
     }
+});
 
-    // カードを作成
-    const card = document.createElement("div");
-    // cardという変数に、空のhtml要素<div>を作成します。
-    // card → <div></div>
-    card.classList.add("card");
-    // cardにクラスを付け加える。cardというクラスを
-    // card → <div class="card"></div>
-    card.textContent = "aaa";
-    // cardにテキストを付け加える。textを
+// 習慣を表示する関数
+function displayHabits() {
+    let storedHabits = localStorage.getItem("habits") || "";
+    let habitsArray = storedHabits.split(","); // カンマで分割して配列にする
+    let cardContainer = $("#cardContainer");
+    cardContainer.empty(); // 以前のリストをクリア
 
-    // cardContainer.appendChild(card);
+    // 習慣を順番に表示
+    habitsArray.forEach(habit => {
+        cardContainer.append(`<p>${habit}</p>`);
+    });
+}
 
+// すべての習慣を消すボタンのクリックイベント
+$("#clearBtn").on("click", function() {
+    // ローカルストレージをクリア
+    localStorage.removeItem("habits");
 
+    // 表示をクリア
+    $("#cardContainer").empty();
+});
 
+// ページを読み込んだ時に習慣を表示
+$(document).ready(function() {
+    displayHabits();
 });
