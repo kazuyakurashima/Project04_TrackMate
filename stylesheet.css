@@ -59,6 +59,7 @@ section {
     display: flex;
     gap: 10px; /* 入力フォームとボタンの間に少し余白を追加 */
     margin-bottom: 20px; /* 入力フォームと習慣リストの間に余白を追加 */
+    margin-top:20px;
 }
 
 #cardContainer {
@@ -76,6 +77,7 @@ section {
 
 #habitForm {
     line-height: 40px; /* 高さと同じ値に設定して、内容が中央揃えになるように */
+    margin-top: 20px;
 }
 
 #addBtn,#clearBtn {
@@ -84,6 +86,7 @@ section {
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 20px;
 }
 
 #addBtn:hover {

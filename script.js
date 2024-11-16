@@ -34,7 +34,12 @@ function displayHabits() {
     // 習慣を順番に表示
     for(let i = 0; i<habitsArray.length; i++) {
         let habit = habitsArray[i];
-        cardContainer.append(`<p>${habit}</p>`);
+        cardContainer.append(`
+            <div>
+                <input type="checkbox" id="habitCheckbox">
+                <label for="habitCheckbox">${habit}</label>
+            </div>
+            `);
     }};
 
 // Clear All Habits Event
